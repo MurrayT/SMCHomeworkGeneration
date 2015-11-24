@@ -23,16 +23,16 @@ def problem_stub(problem_number):
 # Problem {}
 
 # Name of the function to be tested
-func_name = 
+func_name =
 
 # Input variable names, as a string containing a tuple
-inp_vars = 
+inp_vars =
 
 # Help or hints for students
 help_text =''''''
 
 # Default answer when unimplemented
-default = 
+default =
 
 # Number of testcases
 num_tests = 100
@@ -42,7 +42,7 @@ num_tests = 100
 testcases = []
 for i in range(num_tests):
     # generate your testcases somehow
-    
+
     testcases.append(testcaseinput)
 
 # Set the likelyhood that a testcase is revealed to
@@ -57,12 +57,13 @@ timeout = 5
 
 # 1) There is one correct answer and we generate them once and for all
 # handler = [answer_function(*test) for test in testcases]
+# The splat(*) operator is only necessary when the input has more than one var.
 # Note the *test: This is to remove the parenthesis from the input variables
 
 # 2) The output given by the student is one of many correct ouputs (think divisors)
 # handler = lambda student_answer : testcase % student_answer == 0
 
-handler = 
+handler =
 
 # Adding this problem to the problem set
 assignment = add_to_set(assignment,func_name, inp_vars, help_text, default, flip, testcases, timeout, handler, info)
@@ -98,5 +99,3 @@ for problem_number in xrange(number_of_problems):
 
 output_file.write(bottom_stub)
 output_file.close()
-
-

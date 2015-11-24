@@ -105,7 +105,7 @@ def create_assignment(assignment):
 #
 grading = False
 if grading:
-    runfile('~/assignment_generation/{}/{}_grading_testcases.sage')
+    runfile('~/SMCAssignmentGeneration/{}/{}_grading_testcases.sage')
 else:
     runfile('{}_revealed_testcases.sage')
 runfile('~/SageTest/run_tests.sage')
@@ -224,4 +224,3 @@ testRunner(TestCase.buildTestCases())
     shutil.copyfile(output_dir+"/%s_solutions.sage" % assignment_name, path+"/%s_solutions.sage" % assignment_name)
     shutil.copyfile(output_dir+"/%s_playground.sagews" % assignment_name, path+"/%s_playground.sagews" % assignment_name)
     shutil.copyfile(output_dir+"/%s_revealed_testcases.sage" % assignment_name, path+"/%s_revealed_testcases.sage" % assignment_name)
-
