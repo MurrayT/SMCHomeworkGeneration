@@ -1,0 +1,102 @@
+#! /usr/bin/env python
+import sys
+import os
+
+target_assignment = sys.argv[1]
+number_of_problems = int(sys.argv[2])
+
+top_stub = """# Loading
+load('../necessary_functions.py')
+
+# Name your homework set
+this_is = '{}'
+
+info = [this_is]
+assignment = [info,[],[],[],[],[],[],[],[]]
+
+# ------------------------------------------------------ #
+""".format(target_assignment)
+
+
+def problem_stub(problem_number):
+    return """
+# Problem {}
+
+# Name of the function to be tested
+func_name = 
+
+# Input variable names, as a string containing a tuple
+inp_vars = 
+
+# Help or hints for students
+help_text =''''''
+
+# Default answer when unimplemented
+default = 
+
+# Number of testcases
+num_tests = 100
+
+# Generate the testcases. This is the part I always
+# need to change most between problems
+testcases = []
+for i in range(num_tests):
+    # generate your testcases somehow
+    
+    testcases.append(testcaseinput)
+
+# Set the likelyhood that a testcase is revealed to
+# the students (on the scale 0 (never) to 1 (always))
+flip = 0.25
+
+# Maximum time allowed per testcase in seconds
+timeout = 5
+
+# How should the output given by the student be tested?
+# Either
+
+# 1) There is one correct answer and we generate them once and for all
+# handler = [answer_function(*test) for test in testcases]
+# Note the *test: This is to remove the parenthesis from the input variables
+
+# 2) The output given by the student is one of many correct ouputs (think divisors)
+# handler = lambda student_answer : testcase % student_answer == 0
+
+handler = 
+
+# Adding this problem to the problem set
+assignment = add_to_set(assignment,func_name, inp_vars, help_text, default, flip, testcases, timeout, handler, info)
+
+# ------------------------------------------------------ #
+""".format(problem_number)
+
+bottom_stub = """# ------------------------------------------------------ #
+
+# All done writing problems?
+# The following will be created:
+
+# - A folder to assign to your students, containing:
+# -- A .sage file for students to write their solutions
+# -- A .sagews worksheet for students to play with their solutions
+# -- A .sage file containing revealed testcases
+
+# - A folder for you, containing:
+# -- A .sage file for students to write their solutions
+# -- A .sagews worksheet for students to play with their solutions
+# -- A. sage file containing the same revealed testcases the students get
+# -- A .sage file containing all testcases to grade
+
+create_assignment(assignment)
+"""
+
+os.mkdir(target_assignment)
+output_file = open(target_assignment+"/generate_assignment.sage", "w")
+
+output_file.write(top_stub)
+for problem_number in xrange(number_of_problems):
+    output_file.write(problem_stub(problem_number+1))
+
+output_file.write(bottom_stub)
+output_file.close()
+
+
