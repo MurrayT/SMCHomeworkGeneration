@@ -55,6 +55,7 @@ def make_sure_path_exists(path):
 
 def add_to_set(assignment,func_name, inp_vars, help_text, default, flip, testcases, timeout, handler, info):
 
+    print "Adding %s to assignment" % func_name
     assignment[1].append(func_name)
     assignment[2].append(inp_vars)
     assignment[3].append(help_text)
