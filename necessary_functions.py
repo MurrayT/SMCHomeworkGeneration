@@ -108,7 +108,7 @@ def create_assignment(assignment):
 #
 grading = False
 if grading:
-    runfile('~/SMCAssignmentGeneration/{}/{}_grading_testcases.sage')
+    runfile('~/SMCHomeworkGeneration/{}/output/{}_grading_testcases.sage')
 else:
     runfile('{}_revealed_testcases.sage')
 runfile('~/SageTest/run_tests.sage')
@@ -182,18 +182,27 @@ testRunner(TestCase.buildTestCases())
         else:
             for (j,testcase) in enumerate(testcases):
 
-                def repl(str,u):
+                def repl(string,u):
                     formatter = '.format('
-                    for i in range(u):
-                        str = str.replace('testcase[%s]' %i, '{testcase%s}' %i)
-                        formatter += 'testcase%s=testcase[%s]' %(i,i)
-                        if i != u-1:
-                            formatter += ', '
-                        else:
-                            formatter += ')'
+                    if u == 1:
+                        string = string.replace('testcase','{testcase0}')
+                        formatter += 'testcase0=testcase)'
+                    else:
+                        for i in range(u):
+                            str = str.replace('testcase[%s]' %i, '{testcase%s}' %i)
+                            formatter += 'testcase%s=testcase[%s]' %(i,i)
+                            if i != u-1:
+                                formatter += ', '
+                            else:
+                                formatter += ')'
                     return str, formatter
 
-                handler_repl, formatter = repl(handler, len(testcase))
+                if type(testcase) == tuple:
+                    length = 1
+                else:
+                    length = len(testcase)
+
+                handler_repl, formatter = repl(handler, length))
 
                 check = '"%s"%s' %(handler_repl, formatter)
                 check = eval(check) # I don't like this line, is there an alternative? -Murray
