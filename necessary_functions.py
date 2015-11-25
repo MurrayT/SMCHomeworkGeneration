@@ -5,6 +5,7 @@ import errno
 import shutil
 import itertools
 import ast
+import sys
 from uuid import uuid4
 
 MARKERS = {'cell':u"\uFE20", 'output':u"\uFE21"}
@@ -55,7 +56,6 @@ def make_sure_path_exists(path):
 
 def add_to_set(assignment,func_name, inp_vars, help_text, default, flip, testcases, timeout, handler, info):
 
-    print "Adding %s to assignment" % func_name
     assignment[1].append(func_name)
     assignment[2].append(inp_vars)
     assignment[3].append(help_text)
@@ -65,6 +65,8 @@ def add_to_set(assignment,func_name, inp_vars, help_text, default, flip, testcas
     assignment[7].append(timeout)
     assignment[8].append(handler)
 
+    print "Adding %s to assignment" % func_name
+    sys.stdout.flush()
 
     return assignment # Where is hw_set defined, should we instead pass it as argument?
 
