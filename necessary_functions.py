@@ -113,7 +113,14 @@ else:
     runfile('{}_revealed_testcases.sage')
 runfile('~/SageTest/run_tests.sage')
 
-testRunner(TestCase.buildTestCases())
+testcases = TestCase.buildTestCases()
+
+# Comment these lines if you want to run all tests.
+problem_to_test = 1
+testRunner([list(testcases)[problem_to_test - 1]])
+
+# Uncomment the below line to run all tests.
+# testRunner(testcases)
 '''.format(assignment_name,assignment_name,assignment_name)
 
     load_cell = "%%auto\nload('%s_solutions.sage')" % assignment_name
@@ -202,7 +209,7 @@ testRunner(TestCase.buildTestCases())
                 else:
                     length = len(testcase)
 
-                handler_repl, formatter = repl(handler, length))
+                handler_repl, formatter = repl(handler, length)
 
                 check = '"%s"%s' %(handler_repl, formatter)
                 check = eval(check) # I don't like this line, is there an alternative? -Murray
