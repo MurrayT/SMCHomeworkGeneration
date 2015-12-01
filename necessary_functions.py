@@ -13,8 +13,7 @@ MARKERS = {'cell':u"\uFE20", 'output':u"\uFE21"}
 top_stub = """'''
 Group Members
 =============
-Group member 1's id:
-Group member 2's id:
+userids = [] # fill in this array with strings of usernames
 '''
 
 """
