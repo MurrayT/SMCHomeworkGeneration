@@ -195,13 +195,13 @@ testRunner([list(testcases)[problem_to_test - 1]])
                         formatter += 'testcase0=testcase)'
                     else:
                         for i in range(u):
-                            str = str.replace('testcase[%s]' %i, '{testcase%s}' %i)
+                            string = string.replace('testcase[%s]' %i, '{testcase%s}' %i)
                             formatter += 'testcase%s=testcase[%s]' %(i,i)
                             if i != u-1:
                                 formatter += ', '
                             else:
                                 formatter += ')'
-                    return str, formatter
+                    return string, formatter
 
                 if type(testcase) == tuple:
                     length = 1
