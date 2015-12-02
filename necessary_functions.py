@@ -13,9 +13,9 @@ MARKERS = {'cell':u"\uFE20", 'output':u"\uFE21"}
 top_stub = """'''
 Group Members
 =============
-userids = [] # fill in this array with strings of usernames
 '''
 
+userids = [] # fill in this array with strings of usernames
 """
 
 def uuid():
