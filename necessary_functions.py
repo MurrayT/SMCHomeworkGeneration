@@ -90,7 +90,7 @@ def create_assignment(assignment):
 
     solutions_file.write(top_stub)
 
-    for (function_name,input_vars,help_text,default) in itertools.izip(all_function_names, all_input_vars,all_help_texts,all_defaults):
+    for (function_name, input_vars, help_text, default) in itertools.izip(all_function_names, all_input_vars, all_help_texts, all_defaults):
         solutions_file.write('def %s%s:\n' % (function_name, input_vars))
         solutions_file.write('    \'\'\'%s\n    \'\'\'\n' % help_text)
         solutions_file.write('    return %s\n\n' % default)
