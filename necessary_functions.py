@@ -203,7 +203,7 @@ testRunner([list(testcases)[problem_to_test - 1]])
                                 formatter += ')'
                     return string, formatter
 
-                if type(testcase) == tuple:
+                if type(testcase) != tuple:
                     length = 1
                 else:
                     length = len(testcase)
