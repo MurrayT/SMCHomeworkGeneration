@@ -60,13 +60,23 @@ timeout = 5
 # The splat(*) operator is only necessary when the input has more than one var.
 # Note the *test: This is to remove the parenthesis from the input variables
 
-# 2) The output given by the student is one of many correct ouputs (think divisors)
+# 2) The output given by the student is one of many correct ouputs
+# (think divisors)
 # handler = lambda student_answer : testcase % student_answer == 0
 
 handler =
 
 # Adding this problem to the problem set
-assignment = add_to_set(assignment,func_name, inp_vars, help_text, default, flip, testcases, timeout, handler, info)
+assignment = add_to_set(assignment,
+                        func_name,
+                        inp_vars,
+                        help_text,
+                        default,
+                        flip,
+                        testcases,
+                        timeout,
+                        handler,
+                        info)
 
 # ------------------------------------------------------ #
 """.format(problem_number)
