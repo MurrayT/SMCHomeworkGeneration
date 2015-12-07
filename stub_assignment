@@ -23,19 +23,19 @@ def problem_stub(problem_number):
 # Problem {}
 
 # Name of the function to be tested
-func_name =
+func_name = '()'
 
 # Input variable names, as a string containing a tuple
-inp_vars =
+inp_vars = '()'
 
 # Help or hints for students
 help_text =''''''
 
 # Default answer when unimplemented
-default =
+default = ''
 
 # Number of testcases
-num_tests = 100
+num_tests = 20
 
 # Generate the testcases. This is the part I always
 # need to change most between problems
@@ -47,7 +47,7 @@ for i in range(num_tests):
 
 # Set the likelyhood that a testcase is revealed to
 # the students (on the scale 0 (never) to 1 (always))
-flip = 0.25
+flip = 0.5
 
 # Maximum time allowed per testcase in seconds
 timeout = 5
