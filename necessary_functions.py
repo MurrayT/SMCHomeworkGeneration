@@ -166,7 +166,7 @@ testRunner([list(testcases)[problem_to_test - 1]])
     for (index, value) in enumerate(itertools.izip(all_testcases, all_flips)):
         testcases, flip = value
 
-        remember_flips = [random.random() < flip for t in testcases]
+        remember_flips = [random.random() < flip for t in all_handlers[index]]
         all_remember_flips.append(remember_flips)
 
         grading.write('  %s:{\n' % index)
