@@ -225,7 +225,7 @@ testRunner([list(testcases)[problem_to_test - 1]])
                 if isinstance(testcase, tuple):
                     length = len(testcase)
                 else:
-                    length = testcase
+                    length = 1
 
                 handler_repl, formatter = repl(handler, length)
 
