@@ -31,7 +31,7 @@ num_tests = 20
 
 # Generate the testcases. This is the part I always
 # need to change most between problems
-testcases = range(1,101)
+testcases = range(num_tests)
 # for i in range(num_tests):
 #     # generate your testcases somehow
 #     testcases.append(testcaseinput)
