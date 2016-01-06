@@ -31,10 +31,11 @@ num_tests = 20
 
 # Generate the testcases. This is the part I always
 # need to change most between problems
-testcases = range(num_tests)
-# for i in range(num_tests):
-#     # generate your testcases somehow
-#     testcases.append(testcaseinput)
+testcases = []
+for i in range(num_tests):
+    # generate your testcases somehow
+    testcaseinput = i + 1
+    testcases.append(testcaseinput)
 
 # Set the likelyhood that a testcase is revealed to
 # the students (on the scale 0 (never) to 1 (always))
