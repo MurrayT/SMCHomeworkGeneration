@@ -187,7 +187,7 @@ assignment = add_to_set(assignment,func_name, inp_vars, help_text, default, flip
 func_name = 'modular_sqrt'
 
 # Input variable names, as a string containing a tuple
-inp_vars = '(n,a)'
+inp_vars = '(a,n)'
 
 # Help or hints for students
 help_text ='''Find a square root of a modulo n'''
