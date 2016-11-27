@@ -89,13 +89,18 @@ bottom_stub = """# ------------------------------------------------------ #
 # - A folder to assign to your students, containing:
 # -- A .sage file for students to write their solutions
 # -- A .sagews worksheet for students to play with their solutions
-# -- A .sage file containing revealed testcases
 
 # - A folder for you, containing:
 # -- A .sage file for students to write their solutions
 # -- A .sagews worksheet for students to play with their solutions
 # -- A. sage file containing the same revealed testcases the students get
 # -- A .sage file containing all testcases to grade
+
+# - A folder called handouts/revealed_testcases containing:
+# -- A .sage file containing revealed testcases
+# We recommend using this strategy. It allows you to push out
+# an updated version of the revealed testcases without risking
+# writing over the student's code
 
 create_assignment(assignment)
 """
