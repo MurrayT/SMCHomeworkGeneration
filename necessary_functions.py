@@ -124,7 +124,7 @@ grading = False
 if grading:
     runfile('~/SMCHomeworkGeneration/{}/output/{}_grading_testcases.sage')
 else:
-    runfile('{}_revealed_testcases.sage')
+    runfile('~/handouts/revealed_testcases/{}_revealed_testcases.sage')
 runfile('~/SageTest/run_tests.sage')
 
 testcases = TestCase.buildTestCases()
@@ -261,5 +261,12 @@ testRunner([list(testcases)[problem_to_test - 1]])
                     path + "/%s_solutions.sage" % assignment_name)
     shutil.copyfile(output_dir + "/%s_playground.sagews" % assignment_name,
                     path + "/%s_playground.sagews" % assignment_name)
+    
+    # ... and put the revealed testcases into a folder to hand out
+    
+    path = make_sure_path_exists("../../handouts/revealed_testcases")
     shutil.copyfile(output_dir+"/%s_revealed_testcases.sage" % assignment_name,
                     path + "/%s_revealed_testcases.sage" % assignment_name)
+
+
+    
